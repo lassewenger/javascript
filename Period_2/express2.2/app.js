@@ -11,7 +11,8 @@ var login = require('./routes/login');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var jokes = require('./routes/joke');
-
+var api = require('./routes/api');
+ 
 
 var app = express();
 
@@ -29,6 +30,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret:'secret_3162735',saveUninitialized:true, resave: true}));
 
 app.use(function (req, res, next) {
+  if(req.url.startsWith("/api")){
+    return next();
+  }
   if(session.userName != null){
     return next();
   }
@@ -40,10 +44,12 @@ req.url = "/login";
 return next();
 });
 
+app.use('/api', api);
 app.use('/login', login);
 app.use('/', index);
 app.use('/users', users);
 app.use('/joke', jokes);
+
 
 
 // catch 404 and forward to error handler
