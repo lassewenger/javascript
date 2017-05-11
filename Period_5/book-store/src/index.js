@@ -14,7 +14,7 @@ deleteBook = (bookId) => {
         return b.id === bookId;
     })
 
-    console.log(books);
+    //console.log(books);
     books.splice(bookIndex, 1);
 
     this.setState({
