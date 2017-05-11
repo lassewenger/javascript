@@ -5,3 +5,4 @@ Repository for javaScript exercises
   - learnYouNode excersises in the LearnYouNode folder
   - es2015 excersises in the opg_es2015 folder
   - WEBPACK ES6 on Clients & Angular 1.x with ES6 in the webpackBootstrap folder (still missing: Clients & Angular 1.x with ES6)
+- Periode 2 (Hand-in)
